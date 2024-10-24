@@ -1,0 +1,35 @@
+e2s:/ $ cd storage/
+
+e2s:/storage $ ls
+emulated  self
+
+e2s:/storage $ cd self/
+
+e2s:/storage/self $ ls
+primary
+
+e2s:/storage/self $ cd primary/
+
+e2s:/storage/self/primary $ ls
+Alarms   Audiobooks  Documents  Movies  Notifications  Podcasts    Ringtones
+Android  DCIM        Download   Music   Pictures       Recordings
+
+e2s:/storage/self/primary $ cd DC
+
+/system/bin/sh: cd: /storage/self/primary/DC: No such file or directory
+
+2|e2s:/storage/self/primary $ cd DCIM/
+
+e2s:/storage/self/primary/DCIM $ ls
+AnilPhoto.jpg  Camera
+
+e2s:/storage/self/primary/DCIM $ readlink -f AnilPhoto.jpg
+/storage/emulated/0/DCIM/AnilPhoto.jpg
+
+e2s:/storage/self/primary/DCIM $ chmod 777 AnilPhoto.jpg
+
+e2s:/storage/self/primary/DCIM $ ls -l AnilPhoto.jpg
+-rw-rw---- 1 u0_a305 media_rw 4035075 2024-10-14 15:01 AnilPhoto.jpg
+e2s:/storage/self/primary/DCIM $
+
+C:\Users\rushi>adb devices
